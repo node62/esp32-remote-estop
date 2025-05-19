@@ -5,7 +5,7 @@
 
 // --- WiFi Configuration (must match Master's AP settings) ---
 const char* ap_ssid = "ESP32_Broadcast_Net"; // SSID of the Master's AP
-const char* ap_password = "masterpassword";  // Password of the Master's AP
+const char* ap_password = "longpassword";  // Password of the Master's AP
 
 // --- LED Configuration ---
 const int onboardLedPin = 2;    // GPIO pin for the onboard LED (indicates signal presence)
