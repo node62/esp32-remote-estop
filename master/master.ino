@@ -5,7 +5,7 @@
 
 // --- WiFi Access Point Configuration ---
 const char* ap_ssid = "ESP32_Broadcast_Net"; // SSID for the AP
-const char* ap_password = "masterpassword";  // Password for the AP (min 8 characters)
+const char* ap_password = "longpassword";  // Password for the AP (min 8 characters)
 
 // --- LED Configuration ---
 const int onboardLedPin = 2; // GPIO pin for the onboard LED
