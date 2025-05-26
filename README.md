@@ -54,7 +54,7 @@ A wireless system using two ESP32s: a Master (switch-controlled transmitter) and
 * Slave ESP32 **GND** -> Relay Module **GND** pin
 * Slave ESP32 **5V (or VIN)** -> Relay Module **VCC** pin (confirm relay voltage, use external PSU if ESP32 cannot supply enough current/correct voltage)
 
-**Relay Load Connections (Example: Device turns OFF when signal is RECEIVED):**
+**⭐ Relay Load Connections (Example: Device turns OFF when signal is RECEIVED):**
 * Relay **COM** (Common) -> Device/Load (one power terminal)
 * Relay **NO** (Normally Open) -> Power Source for Device/Load
     * *This setup ensures the device is powered OFF when the relay is de-energized (signal received) because the NO contact is open. The device will be powered ON when the relay is energized (signal lost) because the NO contact closes to COM.*
