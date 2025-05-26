@@ -32,9 +32,10 @@ A wireless system using two ESP32s: a Master (switch-controlled transmitter) and
 * **Wi-Fi:** SSID `Gatik_bhai_ke_esp32`, Password `longpassword`.
 * **Signal:** Broadcasts `"MASTER_SIGNAL"` on UDP port `4444`.
 
-**Connections (Master):**
-* Master ESP32 **GPIO4** -> One terminal of Switch
-* Master ESP32 **GND** -> Other terminal of Switch
+**⭐ Connections (Master):**
+* Master ESP32 **GPIO4** -> Positive terminal of Switch
+* Master ESP32 **GND** -> Another positive terminal (+N) of Switch
+    * Forget about the negative terminal of the switch
 
 ---
 
@@ -48,16 +49,17 @@ A wireless system using two ESP32s: a Master (switch-controlled transmitter) and
 * **Signal Timeout:** Relay activates if no signal for 1 second.
 * **Wi-Fi Reconnect:** Tries reconnecting every 10 seconds if Wi-Fi drops.
 
-**Connections (Slave & Relay Module):**
+**⭐ Connections (Slave & Relay Module):**
 * Slave ESP32 **GPIO5** -> Relay Module **IN** pin (signal input)
 * Slave ESP32 **GND** -> Relay Module **GND** pin
 * Slave ESP32 **5V (or VIN)** -> Relay Module **VCC** pin (confirm relay voltage, use external PSU if ESP32 cannot supply enough current/correct voltage)
 
-**Relay Load Connections (Example: Device turns OFF if signal is lost):**
+**Relay Load Connections (Example: Device turns OFF when signal is RECEIVED):**
 * Relay **COM** (Common) -> Device/Load (one power terminal)
-* Relay **NC** (Normally Closed) -> Power Source for Device/Load
-    * *This setup ensures the device is powered when the relay is de-energized (signal present) and cuts power when the relay is energized (signal lost).*
-* *(Alternatively, to turn device ON if signal is lost, use Relay **NO** (Normally Open) instead of NC for connection to Power Source).*
+* Relay **NO** (Normally Open) -> Power Source for Device/Load
+    * *This setup ensures the device is powered OFF when the relay is de-energized (signal received) because the NO contact is open. The device will be powered ON when the relay is energized (signal lost) because the NO contact closes to COM.*
+* *(Alternatively, to turn device ON if signal is received, use Relay **NC** (Normally Closed) instead of NO for connection to Power Source).*
+
 
 ---
 
