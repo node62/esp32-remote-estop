@@ -4,7 +4,7 @@
 #include <WiFiUdp.h>
 
 // --- WiFi Access Point Configuration ---
-const char* ap_ssid = "ESP32_Broadcast_Net"; // SSID for the AP
+const char* ap_ssid = "Gatik_bhai_ke_esp32"; // SSID for the AP
 const char* ap_password = "longpassword";  // Password for the AP (min 8 characters)
 
 // --- LED Configuration ---
